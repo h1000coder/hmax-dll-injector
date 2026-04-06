@@ -1,0 +1,274 @@
+:root {
+    --bg-color: #0b0b0e;
+    --card-bg: rgba(25, 25, 30, 0.95);
+    --accent-color: #00ff7f; /* Verde Neon */
+    --text-color: #ffffff;
+    --secondary-text: #88888b;
+    --border-color: #333338;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+html ,body {
+    background: var(--bg-color);
+    background-image: radial-gradient(circle at top right, #00ff7f15, transparent);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+    overflow: hidden;
+}
+
+.container {
+    background: var(--card-bg);
+    width: 450px;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+
+    position: relative;
+    z-index: 1;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo h1 {
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--accent-color);
+}
+
+.logo p {
+    font-size: 12px;
+    color: var(--secondary-text);
+    margin-top: 5px;
+}
+
+.online {
+    color: var(--accent-color);
+    font-weight: bold;
+    text-shadow: 0 0 10px var(--accent-color);
+}
+
+.input-group label {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 8px;
+    color: var(--secondary-text);
+}
+
+.search-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    flex: 1;
+    background: #121217;
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 13px;
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+#select-dll-btn {
+    background: var(--border-color);
+    color: #fff;
+    padding: 0 15px;
+    border-radius: 6px;
+}
+
+#select-dll-btn:hover {
+    background: #44444a;
+}
+
+.inject-trigger {
+    width: 100%;
+    background: var(--accent-color);
+    color: #000;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    text-transform: uppercase;
+    box-shadow: 0 0 20px rgba(0, 255, 127, 0.2);
+}
+
+.inject-trigger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(0, 255, 127, 0.4);
+}
+
+.console-wrapper {
+    margin-top: 25px;
+}
+
+.console-title {
+    font-size: 10px;
+    color: var(--secondary-text);
+    margin-bottom: 5px;
+}
+
+.console-box {
+    background: #050507;
+    height: 100px;
+    border-radius: 6px;
+    padding: 10px;
+    font-family: 'Consolas', monospace;
+    font-size: 11px;
+    color: var(--accent-color);
+    overflow-y: auto;
+    border: 1px solid #1a1a1f;
+}
+
+footer p {
+    text-align: center;
+    font-size: 10px;
+    color: var(--secondary-text);
+    margin-top: 20px;
+}
+
+select option {
+    background: #121217;
+    color: #fff;
+}
+
+#btn-refresh {
+    background: transparent;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 0 10px;
+    border-radius: 6px;
+}
+
+#btn-refresh:hover {
+    background: var(--accent-color);
+    color: #000;
+}
+
+select {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background: #121217;
+    border: 1px solid #333338;
+    color: #00ff7f;
+    padding: 10px;
+    border-radius: 6px;
+    outline: none;
+}
+
+/* Estilizando a barra de rolagem do select (apenas Webkit/Chrome) */
+select::-webkit-scrollbar {
+    width: 8px;
+}
+select::-webkit-scrollbar-thumb {
+    background: #333338;
+    border-radius: 10px;
+}
+
+#console::-webkit-scrollbar {
+    width: 8px;               /* Largura da barra vertical */
+    background-color: #050507; /* Cor do fundo da calha (track) */
+}
+
+/* 2. O "Polegar" (a parte que desliza) */
+#console::-webkit-scrollbar-thumb {
+    background: #1a1a1f;      /* Cor base do slider */
+    border-radius: 10px;      /* Bordas arredondadas */
+    border: 2px solid #050507; /* Cria um espaçamento interno */
+    transition: 0.3s;
+}
+
+/* 3. Efeito ao passar o mouse ou clicar */
+#console::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color); /* Fica verde neon ao passar o mouse */
+    box-shadow: 0 0 10px var(--accent-color);
+}
+
+/* 4. A "Calha" (onde o polegar desliza) */
+#console::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: #050507;
+}
+
+/* 5. Ajuste no container de logs para garantir que a barra apareça corretamente */
+.console-box {
+    display: flex;
+    flex-direction: column;
+    overflow-y: overlay; /* Faz a scrollbar ficar 'por cima' sem empurrar o texto */
+    scrollbar-width: thin; /* Para compatibilidade com Firefox se necessário */
+}
+
+/* Container do Console */
+.console-box {
+    background: #050507;
+    height: 150px; /* IMPORTANTE: Precisa de altura fixa para scrollar */
+    border-radius: 6px;
+    padding: 10px;
+    font-family: 'Consolas', monospace;
+    font-size: 11px;
+    color: var(--accent-color);
+    border: 1px solid #1a1a1f;
+    
+    /* Configurações de Scroll */
+    overflow-y: auto; 
+    overflow-x: hidden;
+    word-break: break-all; /* Evita scroll horizontal */
+}
+
+/* 1. Estilização da BARRA em si (Track + Thumb) */
+#console::-webkit-scrollbar {
+    width: 6px !important; /* Largura fina para ficar elegante */
+    display: block !important;
+}
+
+/* 2. O fundo da barra (a calha) */
+#console::-webkit-scrollbar-track {
+    background: #050507 !important;
+    border-radius: 10px;
+}
+
+/* 3. O "Carrinho" (a parte que se move) */
+#console::-webkit-scrollbar-thumb {
+    background-color: #1a1a1f !important; /* Cor escura padrão */
+    border-radius: 10px;
+    border: 1px solid #050507;
+}
+
+/* 4. Efeito de brilho neon ao passar o mouse */
+#console::-webkit-scrollbar-thumb:hover {
+    background-color: var(--accent-color) !important; 
+    box-shadow: 0 0 8px var(--accent-color);
+}
+
+/* 5. Forçar a barra a aparecer no Windows (WebView2) */
+#console {
+    scrollbar-color: #1a1a1f #050507; /* Firefox fallback */
+    scrollbar-width: thin;
+}

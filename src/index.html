@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="main.js"></script>
+    <title>Rato Executor - Injetor Rust</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>HmaX <span>INJECTOR</span></h1>
+                <p>Status: <span id="status" class="online">ONLINE</span></p>
+            </div>
+        </header>
+
+        <main>
+          <div class="input-group">
+            <label for="process-select">Selecionar Processo</label>
+              <div class="search-bar">
+                <select id="process-select">
+                  <option value="">Buscando processos...</option>
+                </select>
+                <button id="btn-refresh">ATUALIZAR</button>
+              </div>
+          </div>
+            <div class="input-group">
+                <label for="dll-path">Arquivo da DLL</label>
+                <div class="search-bar">
+                    <input type="text" id="dll-path" placeholder="C:/Users/Cheat/Documents/script.dll" readonly>
+                    <button id="select-dll-btn">PROCURAR</button>
+                </div>
+            </div>
+
+            <button id="btn-inject" class="inject-trigger">INJETAR DLL</button>
+
+            <div class="console-wrapper">
+                <p class="console-title">LOGS DE ATIVIDADE</p>
+                <div id="console" class="console-box">
+                    <p>> Aguardando seleção de arquivo...</p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Versão 1.0 - Desenvolvido em Rust + Tauri</p>
+        </footer>
+    </div>
+</body>
+</html>
