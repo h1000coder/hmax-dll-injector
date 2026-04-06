@@ -1,6 +1,6 @@
 const { invoke } = window.__TAURI__.core;
 
-// Função para adicionar logs no console da UI
+
 function addLog(msg) {
     const consoleBox = document.getElementById('console');
     const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
@@ -46,16 +46,16 @@ async function selectDLL() {
 }
 
 
-// O SEGREDO ESTÁ AQUI: Vincular os eventos corretamente
+
 window.addEventListener("DOMContentLoaded", () => {
 
     // 1. Botão de Atualizar Processos
     document.getElementById('btn-refresh').addEventListener('click', refreshProcesses);
     
-    // 2. Botão de Procurar DLL (O ID correto do seu HTML é select-dll-btn)
+    // 2. Botão de Procurar DLL 
     document.getElementById('select-dll-btn').addEventListener('click', selectDLL);
 
-    // 3. Botão de Injetar (Já deixamos pronto)
+    // 3. Botão de Injetar 
     document.getElementById('btn-inject').addEventListener('click', async () => {
         const pid = document.getElementById('process-select').value;
         const path = document.getElementById('dll-path').value;
